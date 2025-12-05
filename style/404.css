@@ -1,0 +1,52 @@
+.not__found {
+  height: calc(100vh - 60px);
+  position: relative;
+  background: url(../assets/png/bg-404-2.png), url(../assets/png/bg-404-3.png);
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: auto 300px, auto;
+}
+.not__found-box {
+  position: absolute;
+  left: 50%;
+  top: 36%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  text-align: center;
+}
+.not__found-title {
+  font-weight: 900;
+  font-size: 25.3rem;
+  text-transform: uppercase;
+  line-height: 0.8;
+  color: #382660;
+}
+.not__found-descr {
+  font-family: var(--second-font-family);
+  font-size: 3.4rem;
+  letter-spacing: 27%;
+  text-transform: uppercase;
+}
+.not__found-link {
+  max-width: 19.4rem;
+  margin: 4rem auto 0;
+  font-size: 2.6rem;
+}
+
+@media (max-width: 800px) {
+  .not__found {
+    background: url(../assets/png/bg-404-2-320.png), url(../assets/png/bg-404-3.png);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto, auto;
+  }
+  .not__found-title {
+    font-size: 22.3rem;
+  }
+  .not__found-descr {
+    font-size: 3rem;
+  }
+  .not__found-link {
+    font-size: 1.6rem;
+  }
+}
