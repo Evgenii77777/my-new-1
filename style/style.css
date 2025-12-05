@@ -173,14 +173,21 @@ textarea {
 }
 
 body {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
+  position: relative;
   font-family: var(--main-font-family), sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: var(--line-2);
   color: var(--main-text-color);
-  background: var(--main-bg-color);
+  background: linear-gradient(
+    180deg,
+    #1c1330 14%,
+    #281948 42%,
+    #211241 68%,
+    #1c1330 100%
+  );
 }
 
 *,
@@ -275,6 +282,7 @@ button {
   display: flex;
   flex-direction: row;
 }
+
 .main {
   padding-bottom: 10rem;
   gap: 10rem;
@@ -381,6 +389,7 @@ button {
   mix-blend-mode: overlay;
 }
 .submenu-list::after,
+.best__casinos-container::after,
 .mob-menu::after,
 .mob__block-menu::after {
   box-shadow: inset 0 8px 12px rgba(255, 255, 255, 0.4),
@@ -2818,7 +2827,10 @@ button {
   width: 1.5rem;
   height: 1.5rem;
 }
-.date__text {
+.date__text,
+.post-updated-date,
+.single-post__author,
+.single-post__date {
   padding-top: 0.2rem;
   font-family: var(--second-font-family);
   font-size: 1rem;
@@ -2944,6 +2956,7 @@ summary::marker {
   position: absolute;
   opacity: 0;
   cursor: pointer;
+  pointer-events: none;
 }
 
 .checkmark {
@@ -3032,6 +3045,9 @@ textarea {
 .form .form__size--m {
   width: 48%;
 }
+.form textarea {
+  height: 20rem;
+}
 .form input,
 .form textarea {
   padding: 3rem;
@@ -3100,7 +3116,128 @@ textarea {
   text-align: center;
   gap: 0.6rem;
 }
+.left {
+  text-align: left;
+}
+.about__block {
+  margin-top: 2rem;
+  gap: 2rem;
+}
+.about__team-img {
+  width: 25rem;
+  min-width: 25rem;
+  height: 28rem;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+.about__block-info {
+  gap: 1.4rem;
+}
+.about__teammate-link {
+  width: 4.2rem;
+  height: 4.2rem;
+  padding: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+.about__block-info {
+  padding: 3rem;
+}
+.center {
+  text-align: center;
+}
+.post__wrap {
+  height: 100%;
+  padding: 3rem 3rem 2rem;
+  gap: 3rem;
+}
+.post__block {
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.post__title {
+  font-weight: 900;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+.post__link-read {
+  margin-top: 1rem;
+  font-family: var(--second-font-family);
+  font-size: 1.6rem;
+  color: var(--accent-color);
+}
+.post__block-info {
+  margin-top: auto;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-teams-1,
+.swiper-teams-2 {
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.swiper-teams-1 .slots__box-img {
+  min-height: 20rem;
+}
+.swiper-teams-2 .slots__box-img {
+  min-height: 20rem;
+  padding: 0;
+}
+
+.best__casinos-container {
+  width: 100%;
+  padding: 4rem 5rem;
+  background-image: url(../assets/png/bg-rated.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.best__casinos-box {
+  max-width: 66.4rem;
+  width: 100%;
+  gap: 1rem;
+}
+.best__casinos-title {
+  max-width: 37rem;
+  font-weight: 900;
+  font-size: 2.6rem;
+  text-transform: uppercase;
+}
+.best__casinos-text {
+  max-width: 37rem;
+}
+.best__casinos-link {
+  width: max-content;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+.swiper-teams-1 .swiper-slide,
+.swiper-teams-2 .swiper-slide {
+  height: auto;
+  overflow: hidden;
+}
+@media (min-width: 1110px) {
+  .swiper-teams-1 .swiper-wrapper,
+  .swiper-teams-2 .swiper-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  .swiper-teams-1 .swiper-slide,
+  .swiper-teams-2 .swiper-slide {
+    width: calc(100% / 3 - 14px);
+    border-radius: 2rem;
+  }
+}
 @media (max-width: 1110px) {
+  .swiper__teams-box {
+    margin: 0 -2rem;
+  }
   .swiper-online-1 .swiper-wrapper,
   .swiper-bonuses-1 .swiper-wrapper {
     display: flex;
@@ -3207,6 +3344,11 @@ textarea {
   .swiper-slide.active-back .back .game-link {
     pointer-events: all;
   }
+
+  .swiper-teams-1 .swiper-slide,
+  .swiper-teams-2 .swiper-slide {
+    width: 33.4rem;
+  }
 }
 @media (max-width: 900px) {
   .footer__box-info,
@@ -3236,6 +3378,12 @@ textarea {
     padding: 2rem 0 1.8rem 1rem;
   }
 
+  .swiper-teams-1 .slots__box-img,
+  .swiper-teams-2 .slots__box-img {
+    min-width: auto;
+    width: 100%;
+    padding: 0;
+  }
   .slots__box-img {
     min-width: 26%;
     width: 26%;
@@ -3408,6 +3556,15 @@ textarea {
   .responsible__gaming {
     padding-top: 5rem;
   }
+  .about__block {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__team-img {
+    width: 39rem;
+    height: 28rem;
+  }
 }
 @media (max-width: 600px) {
   .games__box-btn,
@@ -3437,6 +3594,26 @@ textarea {
   }
   .form .form__size--m {
     width: 100%;
+  }
+  .best__casinos-container {
+    width: 100%;
+    padding: 26rem 2rem 3rem;
+    background-image: url(../assets/png/bg-rated-320.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .best__casinos-box {
+    max-width: 100%;
+    width: 100%;
+    margin: auto 0 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .best__casinos-title,
+  .best__casinos-text {
+    max-width: 100%;
+    text-align: center;
   }
 }
 
