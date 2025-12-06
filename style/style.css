@@ -418,6 +418,7 @@ button {
 .accent-color {
   color: var(--accent-color);
 }
+
 .btn-base {
   padding: 2.4rem 2.8rem;
   font-size: 1.6rem;
@@ -3220,6 +3221,9 @@ textarea {
   height: auto;
   overflow: hidden;
 }
+.about__teammate-link--big {
+  padding: 0.4rem;
+}
 @media (min-width: 1110px) {
   .swiper-teams-1 .swiper-wrapper,
   .swiper-teams-2 .swiper-wrapper {
@@ -3562,8 +3566,10 @@ textarea {
   }
 
   .about__team-img {
-    width: 39rem;
-    height: 28rem;
+    max-width: 39rem;
+    width: 100%;
+    max-height: 28rem;
+    height: auto;
   }
 }
 @media (max-width: 600px) {
@@ -3622,4 +3628,7 @@ textarea {
   .team__list li {
     width: 100%;
   }
+}
+.accent-color {
+  color: var(--accent-color) !important;
 }
