@@ -20,13 +20,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   checkbox.addEventListener("change", updateButtonState);
 
+  function markInvalid(input) {
+    if (input) input.style.border = "1px solid red";
+  }
+
+  function clearInvalid(input) {
+    if (input) input.style.border = "";
+  }
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!checkbox.checked) return;
 
+    let valid = true;
+
+    if (!nameInput.value.trim()) {
+      markInvalid(nameInput);
+      valid = false;
+    } else clearInvalid(nameInput);
+
+    if (!emailInput.value.trim()) {
+      markInvalid(emailInput);
+      valid = false;
+    } else clearInvalid(emailInput);
+
+    if (!valid) return;
+
     const formData = {
-      name: nameInput?.value.trim() || "",
-      email: emailInput?.value.trim() || "",
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
       comment: commentInput?.value.trim() || "",
     };
 
@@ -40,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (response.ok) {
         form.reset();
         updateButtonState();
+        clearInvalid(nameInput);
+        clearInvalid(emailInput);
 
         if (dialogSuccess) {
           dialogSuccess.showModal();
