@@ -682,6 +682,12 @@ button {
 .slots__box-img11 {
   background: #00244c;
 }
+.slots__box-img12 {
+  background: #0a0a0a;
+}
+.slots__box-img13 {
+  background: #30284c;
+}
 .slots__block-raiting {
   position: absolute;
   right: 1rem;
@@ -2788,7 +2794,8 @@ button {
 .mob__down-menu {
   display: none;
 }
-.ptotection .faq__summ-text {
+
+.faq__summ-text {
   font-size: 2.6rem;
 }
 .slots__image {
