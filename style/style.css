@@ -3160,6 +3160,9 @@ textarea {
   padding: 3rem 3rem 2rem;
   gap: 3rem;
 }
+.faq__summ-text-2 {
+  font-size: 4.2rem;
+}
 .post__block {
   gap: 1rem;
   justify-content: center;
@@ -3316,6 +3319,9 @@ textarea {
   .faq__box-2 .faq__summ {
     font-size: 2.6rem;
     line-height: 1;
+  }
+  .faq__summ-text-2 {
+    font-size: 2.6rem;
   }
   .faq__det--size_m .faq__summ-text {
     font-size: 1.6rem;
