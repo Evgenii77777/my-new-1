@@ -2866,7 +2866,7 @@ button {
   padding: 0 5rem;
 }
 .about {
-  gap: 10rem;
+  gap: 4rem;
 }
 .text__box-second {
   gap: 0.6rem;
@@ -2932,12 +2932,15 @@ details[open] .faq__wrap {
 summary::marker {
   content: none;
 }
+.text__wrapper-about {
+  gap: 4rem;
+}
 .swiper-btn-1 {
   max-width: 68.4rem;
   width: 100%;
 }
 .swiper-btn-2 {
-  max-width: 87.8rem;
+  max-width: 91.8rem;
   width: 100%;
 }
 .privacy,
@@ -3207,6 +3210,9 @@ textarea {
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.best__casinos-coala {
+  background-image: url(../assets/png/bg-about-1200.png);
 }
 .best__casinos-box {
   max-width: 66.4rem;
@@ -3622,6 +3628,12 @@ textarea {
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+  }
+  .best__casinos-coala {
+    padding: 3rem 2rem 31rem;
+    background-image: url(../assets/png/bg-about-320.png);
+    background-size: cover;
+    background-position: bottom;
   }
   .best__casinos-box {
     max-width: 100%;
