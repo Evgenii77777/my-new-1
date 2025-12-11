@@ -420,8 +420,3 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 //
-document.addEventListener("DOMContentLoaded", () => {
-  if (!document.body) {
-    window.location.href = "https://evgenii77777.github.io/my-new-1/pages/404.html";
-  }
-});
