@@ -433,6 +433,10 @@ button {
   height: 100vh;
   margin-top: -7rem;
   background-image: url(../assets/jpeg/bg-hero.jpg);
+  background-image: image-set(
+    "../assets/jpeg/bg-hero.webp" type("image/webp") 1x,
+    "../assets/jpeg/bg-hero.jpg" type("image/jpeg") 1x
+  );
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -3207,12 +3211,20 @@ textarea {
   width: 100%;
   padding: 4rem 5rem;
   background-image: url(../assets/png/bg-rated.png);
+  background-image: image-set(
+    "../assets/png/bg-rated.webp" type("image/webp") 1x,
+    "../assets/png/bg-rated.png" type("image/png") 1x
+  );
   background-position: right center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 .best__casinos-coala {
   background-image: url(../assets/png/bg-about-1200.png);
+  background-image: image-set(
+    "../assets/png/bg-about-1200.webp" type("image/webp") 1x,
+    "../assets/png/bg-about-1200.png" type("image/png") 1x
+  );
 }
 .best__casinos-box {
   max-width: 66.4rem;
@@ -3613,6 +3625,10 @@ textarea {
   }
   .hero {
     background-image: url(../assets/jpeg/bg-hero-320.jpg);
+    background-image: image-set(
+      "../assets/jpeg/bg-hero-320.webp" type("image/webp") 1x,
+      "../assets/jpeg/bg-hero-320.jpg" type("image/jpeg") 1x
+    );
   }
   .slots__buttons,
   .games__buttons {
@@ -3625,6 +3641,10 @@ textarea {
     width: 100%;
     padding: 26rem 2rem 3rem;
     background-image: url(../assets/png/bg-rated-320.png);
+    background-image: image-set(
+      "../assets/png/bg-rated-320.webp" type("image/webp") 1x,
+      "../assets/png/bg-rated-320.png" type("image/png") 1x
+    );
     background-position: top center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -3632,6 +3652,10 @@ textarea {
   .best__casinos-coala {
     padding: 3rem 2rem 31rem;
     background-image: url(../assets/png/bg-about-320.png);
+    background-image: image-set(
+      "../assets/png/bg-about-320.webp" type("image/webp") 1x,
+      "../assets/png/bg-about-320.png" type("image/png") 1x
+    );
     background-size: cover;
     background-position: bottom;
   }
