@@ -294,6 +294,9 @@ button {
     #1c1330 100%
   );
 }
+.section__box{
+  gap: 10rem;
+}
 .main__padd-none {
   padding: 0;
 }
@@ -3447,6 +3450,12 @@ textarea {
   .slots__box-links a {
     padding: 1.6rem 2rem;
   }
+  .mob-hidd{
+    display: none;
+  }
+  .section__box{
+  flex-direction: column-reverse;
+}
 }
 @media (max-width: 800px) {
   .responsible__gaming-text,

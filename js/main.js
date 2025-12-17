@@ -211,6 +211,16 @@ const swiperButton2 = new Swiper(".swiper-btn-2", {
   spaceBetween: 20,
   loop: true,
   centeredSlides: true,
+    breakpoints: {
+    320: {
+       enabled: false,
+         spaceBetween: 0,
+    },
+    840: {
+       enabled: true,
+         spaceBetween: 20,
+    },
+  },
   on: {
     slideChange: function () {
       updateHighlight(this, swiperSlots, highlight2, ".slots__btn", ".slots__slider");
@@ -252,21 +262,55 @@ function updateHighlight(swiper, swiperMap, highlightEl, btnSelector, sliderSele
 }
 
 function setupSliderTabs(blockSelector, btnSelector, sliderSelector, swiperMap) {
-  if (window.innerWidth <= 1100) return;
-
   document.querySelectorAll(blockSelector).forEach((block) => {
     const buttons = block.querySelectorAll(btnSelector);
     const sliders = block.querySelectorAll(sliderSelector);
+
+    if (window.innerWidth <= 840) {
+      let defaultId;
+
+      if (block.classList.contains("slots__box")) {
+        defaultId = "6";
+      } else if (block.classList.contains("games__box")) {
+        defaultId = buttons[0]?.dataset.target; 
+      }
+
+      if (!defaultId) return;
+
+      buttons.forEach(b => b.classList.remove("active"));
+      sliders.forEach(s => s.classList.remove("active"));
+
+      const btn = block.querySelector(
+        `${btnSelector}[data-target="${defaultId}"]`
+      );
+      const slider = block.querySelector(
+        `${sliderSelector}[data-id="${defaultId}"]`
+      );
+
+      if (btn) btn.classList.add("active");
+      if (slider) slider.classList.add("active");
+
+      if (swiperMap[defaultId]) {
+        swiperMap[defaultId].update();
+      }
+
+      return;
+    }
+
+    if (window.innerWidth <= 1100) return;
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const target = btn.dataset.target;
 
-        buttons.forEach((b) => b.classList.remove("active"));
-        sliders.forEach((s) => s.classList.remove("active"));
+        buttons.forEach(b => b.classList.remove("active"));
+        sliders.forEach(s => s.classList.remove("active"));
 
         btn.classList.add("active");
-        const slider = block.querySelector(`${sliderSelector}[data-id="${target}"]`);
+
+        const slider = block.querySelector(
+          `${sliderSelector}[data-id="${target}"]`
+        );
         if (slider) slider.classList.add("active");
 
         if (swiperMap[target]) {
@@ -288,6 +332,8 @@ function initTabs() {
 
 initTabs();
 window.addEventListener("resize", initTabs);
+
+
 
 //
 const swiperInfo1 = new Swiper(".swiper-info-1", {
