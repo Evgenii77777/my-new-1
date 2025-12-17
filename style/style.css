@@ -3400,13 +3400,12 @@ textarea {
     display: none;
   }
   .swiper-slots {
+    height: 56rem;
     padding: 0 2rem;
   }
-  .swiper-slots .swiper-wrapper {
-    gap: 1rem;
-    flex-direction: column;
-  }
+
   .swiper-slots .swiper-slide {
+    height: 13.2rem !important;
     width: 100%;
     flex-direction: row;
   }
@@ -3429,8 +3428,7 @@ textarea {
     width: 74%;
     gap: 0;
   }
-  .brand-item-upd__bonus-name br,
-  .hidd-840 {
+  .brand-item-upd__bonus-name br {
     display: none;
   }
   .slots__box-links {

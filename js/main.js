@@ -5,7 +5,6 @@ function enableClickBackForMobile() {
   slides.forEach((slide) => {
     const back = slide.querySelector(".back");
     if (!back) return;
-
     slide.replaceWith(slide.cloneNode(true));
   });
 
@@ -15,15 +14,11 @@ function enableClickBackForMobile() {
     updatedSlides.forEach((slide) => {
       const back = slide.querySelector(".back");
       if (!back) return;
-
       slide.addEventListener("touchend", (e) => {
         e.preventDefault();
         e.stopPropagation();
-
         const isActive = slide.classList.contains("active-back");
-
         updatedSlides.forEach((s) => s.classList.remove("active-back"));
-
         if (!isActive) {
           slide.classList.add("active-back");
         }
@@ -31,7 +26,6 @@ function enableClickBackForMobile() {
     });
   }
 }
-
 enableClickBackForMobile();
 window.addEventListener("resize", enableClickBackForMobile);
 
@@ -86,6 +80,7 @@ const swiperSlots = {
   1: new Swiper(".swiper-slots-1", {
     slidesPerView: "auto",
     loop: true,
+    direction: "horizontal",
     spaceBetween: 24,
     navigation: {
       nextEl: ".swiper-slots-1-button-next",
@@ -93,12 +88,14 @@ const swiperSlots = {
     },
     breakpoints: {
       0: {
-        enabled: false,
-        spaceBetween: 0,
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "vertical",
       },
       840: {
-        enabled: true,
+        slidesPerView: "auto",
         spaceBetween: 24,
+        direction: "horizontal",
       },
     },
   }),
@@ -106,18 +103,21 @@ const swiperSlots = {
     slidesPerView: "auto",
     loop: true,
     spaceBetween: 24,
+    direction: "horizontal",
     navigation: {
       nextEl: ".swiper-slots-2-button-next",
       prevEl: ".swiper-slots-2-button-prev",
     },
     breakpoints: {
       0: {
-        enabled: false,
-        spaceBetween: 0,
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "vertical",
       },
       840: {
-        enabled: true,
+        slidesPerView: "auto",
         spaceBetween: 24,
+        direction: "horizontal",
       },
     },
   }),
@@ -125,18 +125,21 @@ const swiperSlots = {
     slidesPerView: "auto",
     loop: true,
     spaceBetween: 24,
+    direction: "horizontal",
     navigation: {
       nextEl: ".swiper-slots-3-button-next",
       prevEl: ".swiper-slots-3-button-prev",
     },
     breakpoints: {
       0: {
-        enabled: false,
-        spaceBetween: 0,
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "vertical",
       },
       840: {
-        enabled: true,
+        slidesPerView: "auto",
         spaceBetween: 24,
+        direction: "horizontal",
       },
     },
   }),
@@ -144,18 +147,21 @@ const swiperSlots = {
     slidesPerView: "auto",
     loop: true,
     spaceBetween: 24,
+    direction: "horizontal",
     navigation: {
       nextEl: ".swiper-slots-4-button-next",
       prevEl: ".swiper-slots-4-button-prev",
     },
     breakpoints: {
       0: {
-        enabled: false,
-        spaceBetween: 0,
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "vertical",
       },
       840: {
-        enabled: true,
+        slidesPerView: "auto",
         spaceBetween: 24,
+        direction: "horizontal",
       },
     },
   }),
@@ -163,18 +169,21 @@ const swiperSlots = {
     slidesPerView: "auto",
     loop: true,
     spaceBetween: 24,
+    direction: "horizontal",
     navigation: {
       nextEl: ".swiper-slots-5-button-next",
       prevEl: ".swiper-slots-5-button-prev",
     },
     breakpoints: {
       0: {
-        enabled: false,
-        spaceBetween: 0,
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "vertical",
       },
       840: {
-        enabled: true,
+        slidesPerView: "auto",
         spaceBetween: 24,
+        direction: "horizontal",
       },
     },
   }),
@@ -224,7 +233,7 @@ function updateHighlight(swiper, swiperMap, highlightEl, btnSelector, sliderSele
     document.querySelectorAll(btnSelector).forEach((b) => {
       b.classList.toggle("active", b === btn);
     });
-    highlightEl.style.width = btn.offsetWidth + "px";
+    highlightEl.style.width = 182 + "px";
 
     const target = btn.dataset.target;
     document.querySelectorAll(sliderSelector).forEach((s) => {
