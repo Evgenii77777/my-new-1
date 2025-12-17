@@ -80,7 +80,6 @@ const swiperSlots = {
   1: new Swiper(".swiper-slots-1", {
     slidesPerView: "auto",
     loop: true,
-    direction: "horizontal",
     spaceBetween: 24,
     navigation: {
       nextEl: ".swiper-slots-1-button-next",
@@ -89,13 +88,11 @@ const swiperSlots = {
     breakpoints: {
       0: {
         slidesPerView: 4,
-        spaceBetween: 10,
-        direction: "vertical",
+        spaceBetween: 0,
       },
       840: {
         slidesPerView: "auto",
         spaceBetween: 24,
-        direction: "horizontal",
       },
     },
   }),
@@ -108,16 +105,14 @@ const swiperSlots = {
       nextEl: ".swiper-slots-2-button-next",
       prevEl: ".swiper-slots-2-button-prev",
     },
-    breakpoints: {
+     breakpoints: {
       0: {
         slidesPerView: 4,
-        spaceBetween: 10,
-        direction: "vertical",
+        spaceBetween: 0,
       },
       840: {
         slidesPerView: "auto",
         spaceBetween: 24,
-        direction: "horizontal",
       },
     },
   }),
@@ -130,16 +125,14 @@ const swiperSlots = {
       nextEl: ".swiper-slots-3-button-next",
       prevEl: ".swiper-slots-3-button-prev",
     },
-    breakpoints: {
+     breakpoints: {
       0: {
         slidesPerView: 4,
-        spaceBetween: 10,
-        direction: "vertical",
+        spaceBetween: 0,
       },
       840: {
         slidesPerView: "auto",
         spaceBetween: 24,
-        direction: "horizontal",
       },
     },
   }),
@@ -152,16 +145,14 @@ const swiperSlots = {
       nextEl: ".swiper-slots-4-button-next",
       prevEl: ".swiper-slots-4-button-prev",
     },
-    breakpoints: {
+     breakpoints: {
       0: {
         slidesPerView: 4,
-        spaceBetween: 10,
-        direction: "vertical",
+        spaceBetween: 0,
       },
       840: {
         slidesPerView: "auto",
         spaceBetween: 24,
-        direction: "horizontal",
       },
     },
   }),
@@ -174,16 +165,14 @@ const swiperSlots = {
       nextEl: ".swiper-slots-5-button-next",
       prevEl: ".swiper-slots-5-button-prev",
     },
-    breakpoints: {
+     breakpoints: {
       0: {
         slidesPerView: 4,
-        spaceBetween: 10,
-        direction: "vertical",
+        spaceBetween: 0,
       },
       840: {
         slidesPerView: "auto",
         spaceBetween: 24,
-        direction: "horizontal",
       },
     },
   }),
@@ -252,7 +241,7 @@ function updateHighlight(swiper, swiperMap, highlightEl, btnSelector, sliderSele
 
       if (isActive && swiperMap[target]) {
         const sSwiper = swiperMap[target];
-        sSwiper.update(); // пересчёт размеров
+        sSwiper.update(); 
         if (sSwiper.params.loop) sSwiper.slideToLoop(0, 0);
         else sSwiper.slideTo(0, 0);
         if (sSwiper.navigation) sSwiper.navigation.update();
@@ -270,7 +259,7 @@ function setupSliderTabs(blockSelector, btnSelector, sliderSelector, swiperMap) 
       let defaultId;
 
       if (block.classList.contains("slots__box")) {
-        defaultId = "6";
+        defaultId = "5";
       } else if (block.classList.contains("games__box")) {
         defaultId = "1"; 
       }
