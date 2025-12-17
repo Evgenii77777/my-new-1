@@ -272,7 +272,7 @@ function setupSliderTabs(blockSelector, btnSelector, sliderSelector, swiperMap) 
       if (block.classList.contains("slots__box")) {
         defaultId = "6";
       } else if (block.classList.contains("games__box")) {
-        defaultId = buttons[0]?.dataset.target; 
+        defaultId = "1"; 
       }
 
       if (!defaultId) return;
