@@ -3410,10 +3410,11 @@ textarea {
   }
 
   .brand-item-upd__bonus{
+    height: 1.8rem;
     font-size: 1.5rem;
   }
   .slots__box-brand {
-    padding: 2rem 0 1.8rem 1rem;
+    padding: 2rem 1rem 1.8rem ;
   }
 
   .swiper-teams-1 .slots__box-img,
