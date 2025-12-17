@@ -3405,9 +3405,11 @@ textarea {
   }
 
   .swiper-slots .swiper-slide {
-    height: 13.2rem !important;
     width: 100%;
     flex-direction: row;
+  }
+  .brand-item-upd__bonus{
+    height: 1.5rem;
   }
   .slots__box-brand {
     padding: 2rem 0 1.8rem 1rem;
